@@ -15,7 +15,7 @@ The script of the app - to learn, develop or borrow some parts - is available at
 
 ## How did I come to this?
 
-The idea to visualise the map came to me first when, together with my partner (of another citizenship), I was considering where to travel next without the need to worry about the decisions on visas. Several months later, I was stimulated even more by Prince Harry and Meghan Markle's wedding and Roman Abramovich's (one of the Russian oligarchs) problems with British visa. These occasions might look extraordinary but they ensured me that getting visa and travelling is an urgent matter in highly globalised and transcontinental world. So, if getting visa is the obstacle to see a friend or soulmate then travelling freely is important (I acknowledge that Mr. Abramovish is not that sentimental if he travels but anyways). That is where my (quite basic to be honest) web app comes in handy!
+The idea to visualise the map came to me first when, together with my partner (of another citizenship), I was considering where to travel next without the need to worry about the decisions on visas. Several months later, I was stimulated even more by Prince Harry and Meghan Markle's wedding and Roman Abramovich's (one of the Russian oligarchs) problems with British visa. These occasions might look extraordinary but they ensured me that getting visa and travelling is an urgent matter in highly globalised and transcontinental world. So, if getting visa is the obstacle to see a friend or soulmate then travelling freely is important (I acknowledge that Mr. Abramovich is not that sentimental if he travels but anyways). That is where my (quite basic to be honest) web app comes in handy!
 
 ## Further plans
 
