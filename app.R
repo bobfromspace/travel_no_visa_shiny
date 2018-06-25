@@ -18,6 +18,7 @@ mp_world_cntr = readOGR(dsn = "ne_50m_admin_0_countries",
                         encoding = "UTF-8")
 # the data got from https://en.wikipedia.org/wiki/Template:Visa_requirements
 # consequently it was transformed
+# can be accessed here: https://1drv.ms/u/s!AsB08ZBv5_PG-yydMsqQs_ks_FXU
 visa_dt = readRDS("visa_free_countries_mutual.Rds")
 visa_dt = dplyr::arrange(visa_dt,nms_rep)
 
