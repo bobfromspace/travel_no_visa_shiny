@@ -42,12 +42,20 @@ create_2dt <- function(ctz1,ctz2) {
 
 # function to print names of mutually visa-free countries
 list_cntr <- function(ctz1,ctz2) {
-  x = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
-    group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
-    group_by(country) %>% count() %>% filter(n>1)
-  x = x$country %>% as.character() %>% sort(x,decreasing = F) %>% 
-    paste(collapse = ", ")
-}
+  if (ctz1==ctz2) {
+    x = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
+      group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
+      group_by(country) %>% count() %>% filter(n>0)
+    x = x$country %>% as.character() %>% sort(x,decreasing = F) %>% 
+      paste(collapse = ", ")
+  } else{
+    x = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
+      group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
+      group_by(country) %>% count() %>% filter(n>1)
+    x = x$country %>% as.character() %>% sort(x,decreasing = F) %>% 
+      paste(collapse = ", ")
+  }
+  }
 
 # Define UI for application that draws a leaflet map
 ui <- fluidPage(
