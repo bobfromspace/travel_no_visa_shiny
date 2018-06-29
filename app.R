@@ -24,11 +24,20 @@ visa_dt = dplyr::arrange(visa_dt,nms_rep)
 
 # function to subset mutually visa-free countries
 create_2dt <- function(ctz1,ctz2) {
-  dt_name = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
-    group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
-    group_by(country) %>% count() %>% filter(n>1)
-  dt_vec = dt_name$country
-  dt2cntr = subset(mp_world_cntr,GEOUNIT %in% dt_vec)
+  if (ctz1==ctz2) {
+    dt_name = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
+      group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
+      group_by(country) %>% count() %>% filter(n>0)
+    dt_vec = dt_name$country
+    dt2cntr = subset(mp_world_cntr,GEOUNIT %in% dt_vec)
+  } else {
+    dt_name = visa_dt %>% filter(nms_rep==ctz1|nms_rep==ctz2) %>% 
+      group_by(nms_rep,country) %>% count() %>% dplyr::select(-n) %>% 
+      group_by(country) %>% count() %>% filter(n>1)
+    dt_vec = dt_name$country
+    dt2cntr = subset(mp_world_cntr,GEOUNIT %in% dt_vec)
+    
+  }
 }
 
 # function to print names of mutually visa-free countries
